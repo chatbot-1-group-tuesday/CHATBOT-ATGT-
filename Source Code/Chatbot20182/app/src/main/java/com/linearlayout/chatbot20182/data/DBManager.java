@@ -59,7 +59,7 @@ public class DBManager extends SQLiteOpenHelper {
         values.put(COL_NAME, law.getmName());
         values.put(COL_DES, law.getmDescription());
         values.put(COL_ACTIVATE, law.getmActivate());
-        values.put(COL_IMAGE_URL, law.getmImageURL());
+       // values.put(COL_IMAGE_URL, law.getmImage());
         db.insert(DB_TABLE, null, values);
         db.close();
         Log.d(TAG, "addLaw succ ");

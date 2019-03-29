@@ -4,35 +4,38 @@ public class Law {
     private int mId;
     private String mName;
     private String mDescription;
-    private String mImageURL;
+
+    public byte[] getmImage() {
+        return mImage;
+    }
+
+    public void setmImage(byte[] mImage) {
+        this.mImage = mImage;
+    }
+
+    private byte[] mImage;
     private String mActivate;
 
-    public Law(String mName, String mDescription,String mImageURL, String mActivate) {
+    public Law(String mName, String mDescription,byte[] mImage, String mActivate) {
         this.mName = mName;
         this.mDescription = mDescription;
         this.mActivate = mActivate;
-        this.mImageURL=mImageURL;
+        this.mImage=mImage;
     }
 
     public Law() {
 
     }
 
-    public Law(int mId, String mName, String mDescription,String mImageURL, String mActivate) {
+    public Law(int mId, String mName, String mDescription,byte[] mImage, String mActivate) {
         this.mId = mId;
         this.mName = mName;
         this.mDescription = mDescription;
         this.mActivate = mActivate;
-        this.mImageURL=mImageURL;
+        this.mImage=mImage;
     }
 
-    public String getmImageURL() {
-        return mImageURL;
-    }
 
-    public void setmImageURL(String mImageURL) {
-        this.mImageURL = mImageURL;
-    }
 
     public int getmId() {
         return mId;
