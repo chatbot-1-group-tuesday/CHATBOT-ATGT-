@@ -1,8 +1,11 @@
 package com.linearlayout.chatbot20182.data;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.linearlayout.chatbot20182.Model.Law;
 
 public class DBManager extends SQLiteOpenHelper
 {
@@ -36,5 +39,21 @@ public class DBManager extends SQLiteOpenHelper
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+
+
+
     }
+    public void addLaw(Law law)
+    {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(NAME,law.getmName());
+        values.put(DESCRIPTION,law.getmDescription());
+
+        db.insert(TABLE_NAME,null,values);
+
+    }
+
+
 }
