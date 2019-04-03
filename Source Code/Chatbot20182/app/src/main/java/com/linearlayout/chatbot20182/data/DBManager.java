@@ -98,7 +98,7 @@ public class DBManager extends SQLiteOpenHelper
             while (cursor.moveToNext());
 
         }
-        db.close();
+          db.close();
           return listLaw;
     }
 

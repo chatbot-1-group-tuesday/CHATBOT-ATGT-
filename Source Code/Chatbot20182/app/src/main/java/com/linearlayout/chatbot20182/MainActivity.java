@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         final DBManager dbManager = new DBManager(this);
 
-        //Anh xa bien vao giao dien thong qua id
+        //Ánh xạ biến vào giao dien thong qua id
 
         edtName = (EditText) findViewById(R.id.edt_name);
         edtDescription = (EditText) findViewById(R.id.edt_description);
