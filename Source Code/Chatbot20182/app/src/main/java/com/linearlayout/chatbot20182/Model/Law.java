@@ -7,6 +7,10 @@ public class Law
     private String mDescription;
 
 
+    public Law()
+    {
+
+    }
     public Law(int mID, String mName, String mDescription) {
         this.mID = mID;
         this.mName = mName;
