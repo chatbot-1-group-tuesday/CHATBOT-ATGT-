@@ -2,15 +2,18 @@ package com.linearlayout.chatbot20182.Model;
 
 public class Law
 {
+
     private int mID;
     private String mName;
     private String mDescription;
-
 
     public Law()
     {
 
     }
+
+
+
     public Law(int mID, String mName, String mDescription) {
         this.mID = mID;
         this.mName = mName;
@@ -21,6 +24,7 @@ public class Law
         this.mName = mName;
         this.mDescription = mDescription;
     }
+
 
     public int getmID() {
         return mID;
