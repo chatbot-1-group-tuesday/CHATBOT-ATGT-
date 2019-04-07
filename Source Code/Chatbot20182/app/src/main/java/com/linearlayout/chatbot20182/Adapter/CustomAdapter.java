@@ -1,6 +1,7 @@
 package com.linearlayout.chatbot20182.Adapter;
 
 import android.content.Context;
+import android.support.annotation.LayoutRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,27 +13,23 @@ import com.linearlayout.chatbot20182.R;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
-
-public class CustomAdapter extends ArrayAdapter {
+public class CustomAdapter extends ArrayAdapter<Law> {
 
     private Context context;//context chính là main activity
     private int resource;
     private List<Law> lawList;
 
-    public CustomAdapter(@androidx.annotation.NonNull Context context, int resource, @androidx.annotation.NonNull List<Law> objects) {
+    public CustomAdapter( Context context, int resource,  List<Law> objects) {
         super(context, resource, objects);
-        this.context=context;
-        this.resource=resource;
-        this.lawList=objects;
+        this.context = context;
+        this.resource = resource;
+        this.lawList = objects;
     }
 
-    @NonNull
-    //Hàm dùng để convert view
     @Override
-    public View getView(int position, @androidx.annotation.Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
 
-        ViewHolder viewHolder = null;
+        ViewHolder viewHolder  =null ;
 
         if(convertView==null)
         {
@@ -43,24 +40,27 @@ public class CustomAdapter extends ArrayAdapter {
             viewHolder.tvName=(TextView) convertView.findViewById(R.id.tv_name);
             viewHolder.tvDescription = (TextView) convertView.findViewById(R.id.tv_description);
             convertView.setTag(viewHolder);
-    }
+        }
         else
-            {
+        {
 
-                viewHolder =(ViewHolder) convertView.getTag();
-            }
+            viewHolder =(ViewHolder) convertView.getTag();
+        }
 
-            Law law = lawList.get(position);
-            viewHolder.tvId.setText(String.valueOf(law.getmID()));
-            viewHolder.tvName.setText(String.valueOf(law.getmName()));
-            viewHolder.tvDescription.setText(String.valueOf(law.getmDescription()));
+        Law law = lawList.get(position);
+        viewHolder.tvId.setText(String.valueOf(law.getmID()));
+        viewHolder.tvName.setText(String.valueOf(law.getmName()));
+        viewHolder.tvDescription.setText(String.valueOf(law.getmDescription()));
 
 
-            return convertView;
+        return convertView;
 
 
     }
-//Tạo 1 view holder chứa các listview cần hiển thị
+
+
+
+    //Tạo 1 view holder chứa các listview cần hiển thị
     public class ViewHolder
     {
              private TextView tvId;

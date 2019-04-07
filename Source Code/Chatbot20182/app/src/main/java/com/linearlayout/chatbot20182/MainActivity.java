@@ -7,8 +7,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.linearlayout.chatbot20182.Adapter.CustomAdapter;
 import com.linearlayout.chatbot20182.Model.Law;
 import com.linearlayout.chatbot20182.data.DBManager;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
     private Button btnUpdate;
     private ListView lvLaw;
 
+    private CustomAdapter customAdapter;
+    private List<Law> lawList;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +34,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final DBManager dbManager = new DBManager(this);
+        initWidget();
+        lawList=dbManager.getAllLaw();
 
+
+        setAdapter();
         //Ánh xạ biến vào giao dien thong qua id
-
-        edtName = (EditText) findViewById(R.id.edt_name);
-        edtDescription = (EditText) findViewById(R.id.edt_description);
-        btnSave = (Button) findViewById(R.id.btn_save);
-        btnUpdate = (Button) findViewById(R.id.btn_update);
-
-        lvLaw = (ListView) findViewById(R.id.lv_law);
-
         //Bat su kien cua nut Button
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                  {
                      dbManager.addLaw(law);
                  }
+
             }
         });
     }
@@ -57,6 +62,28 @@ public class MainActivity extends AppCompatActivity {
         return law;
 
 
+
+    }
+
+    private void initWidget()
+    {
+        //Ánh xạ biến vào giao dien thong qua id
+        edtName = (EditText) findViewById(R.id.edt_name);
+        edtDescription = (EditText) findViewById(R.id.edt_description);
+        btnSave = (Button) findViewById(R.id.btn_save);
+        btnUpdate = (Button) findViewById(R.id.btn_update);
+
+        lvLaw = (ListView) findViewById(R.id.lv_law);
+    }
+
+    private void setAdapter()
+    {
+        if (customAdapter==null)
+        {
+            CustomAdapter customAdapter=new CustomAdapter(this,R.layout.item_listviewlaw,lawList);
+            lvLaw.setAdapter(customAdapter);
+        }
+        lvLaw.setAdapter(customAdapter);
     }
 
     }

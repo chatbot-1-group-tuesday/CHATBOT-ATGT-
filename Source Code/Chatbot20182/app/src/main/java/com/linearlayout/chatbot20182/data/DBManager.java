@@ -15,13 +15,14 @@ import java.util.List;
 
 public class DBManager extends SQLiteOpenHelper
 {
+
     private final String Tag = "DBManager";
     private static final String DATABASE_NAME ="law";
     private static final String TABLE_NAME="lawlist";
     private static final String ID = "id";
     private static final String NAME ="name";
     private static final String DESCRIPTION ="description";
-    private static int VERSION =1;
+    private static int VERSION = 60;
 
     private Context context;
     //Câu truy vấn tạo thêm bảng
@@ -89,8 +90,8 @@ public class DBManager extends SQLiteOpenHelper
             do {
                 Law law = new Law();
                 law.setmID(cursor.getInt(0));
-                law.setmName(cursor.getString(1));
-                law.setmDescription(cursor.getString(2));
+                law.setmName(cursor.getString(1)+"");
+                law.setmDescription(cursor.getString(2)+"");
                 listLaw.add(law);
             }
             //check xem sau ket qua dau tien con ket qua nao khong
