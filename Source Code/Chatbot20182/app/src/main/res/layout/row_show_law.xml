@@ -33,6 +33,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="eee" />
+        <TextView
+            android:id="@+id/tv_activate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </LinearLayout>

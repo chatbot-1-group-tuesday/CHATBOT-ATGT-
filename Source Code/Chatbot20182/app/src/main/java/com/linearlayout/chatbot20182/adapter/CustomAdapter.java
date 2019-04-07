@@ -1,6 +1,8 @@
 package com.linearlayout.chatbot20182.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +40,9 @@ public class CustomAdapter extends ArrayAdapter<Law> {
             viewHolder.tv_id = convertView.findViewById(R.id.tv_id);
             viewHolder.tv_name = convertView.findViewById(R.id.tv_name);
             viewHolder.tv_des = convertView.findViewById(R.id.tv_des);
-            viewHolder.image_url = convertView.findViewById(R.id.edit_image_url);
+            viewHolder.tv_image= convertView.findViewById(R.id.tv_image);
+            viewHolder.tv_activate=convertView.findViewById(R.id.tv_activate);
+
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -48,6 +52,9 @@ public class CustomAdapter extends ArrayAdapter<Law> {
         viewHolder.tv_id.setText(String.valueOf(law.getmId()));
         viewHolder.tv_name.setText(String.valueOf(law.getmName()));
         viewHolder.tv_des.setText(String.valueOf(law.getmDescription()));
+        viewHolder.tv_activate.setText(String.valueOf(law.getmActivate()));
+        Bitmap bitmap= BitmapFactory.decodeByteArray(law.getmImage(),0,law.getmImage().length );
+        viewHolder.tv_image.setImageBitmap(bitmap);
 
         return convertView;
     }
@@ -57,7 +64,8 @@ public class CustomAdapter extends ArrayAdapter<Law> {
         private TextView tv_id;
         private TextView tv_name;
         private TextView tv_des;
-        private ImageView image_url;
+        private TextView tv_activate;
+        private ImageView tv_image;
 
 
     }

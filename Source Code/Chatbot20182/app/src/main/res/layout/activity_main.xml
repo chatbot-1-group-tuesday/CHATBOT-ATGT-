@@ -14,11 +14,26 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="xem law" />
+
     <Button
         android:id="@+id/btn_add_law"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="addLaw" />
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="update" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="delete" />
 
 </LinearLayout>

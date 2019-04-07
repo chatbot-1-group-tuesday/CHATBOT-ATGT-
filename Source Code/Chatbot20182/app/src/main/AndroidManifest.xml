@@ -19,6 +19,8 @@
         <activity android:name=".ShowLaw">
         </activity>
         <activity android:name=".AddLaw"></activity>
+        <activity android:name=".UpdateLaw"></activity>
+        <activity android:name=".DeleteLaw"></activity>
 
     </application>
 

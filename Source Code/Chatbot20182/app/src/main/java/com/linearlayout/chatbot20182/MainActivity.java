@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnShowLaw;
     private Button btnAddLaw;
+    private Button btnUpdate;
+    private Button btnDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +38,27 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UpdateLaw.class);
+                startActivity(intent);
+            }
+        });
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DeleteLaw.class);
+                startActivity(intent);
+            }
+        });
 
     }
     private void initWiget() {
 
         btnShowLaw = (Button) findViewById(R.id.btn_show_law);
         btnAddLaw = (Button) findViewById(R.id.btn_add_law);
+        btnUpdate=(Button)findViewById(R.id.btn_update);
+        btnDelete=(Button)findViewById(R.id.btn_delete);
     }
 }
