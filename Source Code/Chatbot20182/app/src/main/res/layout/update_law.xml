@@ -14,13 +14,16 @@
             android:id="@+id/update_find_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="tìm tên biển                                            " />
+            android:background="#CCFFFF"
+            android:hint="tìm tên Luật                                           " />
 
         <Button
             android:id="@+id/update_btn_tim_bien"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="tìm" />
+            android:background="@color/colorvangnhat"
+            android:textColor="@color/colorxanh"
+            android:text="Tìm" />
     </LinearLayout>
 
     <EditText
@@ -28,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:enabled="false"
+
         android:hint="id"
        />
 
@@ -35,6 +39,7 @@
         android:id="@+id/update_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#CCFFFF"
         android:hint="Name" />
 
     <EditText
@@ -48,6 +53,7 @@
         android:id="@+id/update_activate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#CCFFFF"
         android:hint="Activate" />
 
     <ImageView
@@ -55,14 +61,15 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:src="@drawable/macdinh" />
+        android:background="@drawable/macdinh"/>
 
     <Button
         android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="save" />
+        android:textColor="@color/colorxanh"
+        android:text="Lưu luật" />
 <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">

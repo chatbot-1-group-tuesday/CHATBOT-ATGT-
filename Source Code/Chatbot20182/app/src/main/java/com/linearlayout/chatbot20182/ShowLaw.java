@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
-import com.linearlayout.chatbot20182.adapter.CustomAdapter;
+import com.linearlayout.chatbot20182.Adapter.CustomAdapter;
 import com.linearlayout.chatbot20182.data.DBManager;
 import com.linearlayout.chatbot20182.model.Law;
 
@@ -33,6 +33,9 @@ public class ShowLaw extends AppCompatActivity {
             customAdapter = new CustomAdapter(this, R.layout.row_show_law, law);
         }
         lvLaw.setAdapter(customAdapter);
+
+
+
     }
 
 }

@@ -16,18 +16,21 @@
             android:id="@+id/tv_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#3366FF"
             android:text="eee" />
 
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#FF3333"
             android:text="eee" />
 
         <TextView
             android:id="@+id/tv_des"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorxanh"
             android:text="eee" />
         <TextView
             android:id="@+id/tv_activate"

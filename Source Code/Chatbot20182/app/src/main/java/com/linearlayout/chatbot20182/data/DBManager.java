@@ -66,7 +66,7 @@ public class DBManager extends SQLiteOpenHelper {
       //  values.put(COL_IMAGE, law.getmImage());
         db.insert(DB_TABLE, null, values);
         db.close();
-        Log.d(TAG, "addLaw succ ");
+        Log.d(TAG, "Add Law successfully ");
        /* String sqlite= "INSERT INTO law VALUES(null, ?, ?, ?, ?)";
         SQLiteStatement statement= db.compileStatement(sqlite);
         statement.clearBindings();

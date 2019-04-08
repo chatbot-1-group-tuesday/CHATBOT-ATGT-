@@ -1,4 +1,4 @@
-package com.linearlayout.chatbot20182.adapter;
+package com.linearlayout.chatbot20182.Adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;

@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.linearlayout.chatbot20182.adapter.CustomAdapter;
+import com.linearlayout.chatbot20182.Adapter.CustomAdapter;
 import com.linearlayout.chatbot20182.data.DBManager;
 import com.linearlayout.chatbot20182.model.Law;
 
@@ -52,7 +52,7 @@ public class AddLaw extends AppCompatActivity {
                     if (law != null) {
                         dbManager.addLaw(law);
                     }
-                    Toast.makeText(getApplicationContext(), "ok nhe", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Đã thêm luật thành công", Toast.LENGTH_SHORT).show();
 
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(),e.toString(), Toast.LENGTH_SHORT).show();
@@ -93,12 +93,4 @@ public class AddLaw extends AppCompatActivity {
     }*/
 
 
-    //mo may anh
-  /*  @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == 1111 && resultCode == RESULT_OK) {
-            Bitmap image = (Bitmap) data.getExtras().get("data");
-            editImage.setImageBitmap(image);
-        }
-    }*/
 }

@@ -16,7 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.linearlayout.chatbot20182.adapter.CustomAdapter;
+import com.linearlayout.chatbot20182.Adapter.CustomAdapter;
 import com.linearlayout.chatbot20182.data.DBManager;
 import com.linearlayout.chatbot20182.model.Law;
 
@@ -33,7 +33,7 @@ public class UpdateLaw extends AppCompatActivity {
     private TextView update_name;
     private TextView update_des;
     private TextView update_activate;
-   // private ImageView update_image;
+
 
     private CustomAdapter customAdapter;
 
@@ -76,7 +76,7 @@ public class UpdateLaw extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 btn_save.setEnabled(true);
-              //  update_image.setEnabled(true);
+
                 update_activate.setEnabled(true);
                 update_des.setEnabled(true);
                 update_name.setEnabled(true);
@@ -85,7 +85,7 @@ public class UpdateLaw extends AppCompatActivity {
                 update_name.setText(law.getmName());
                 update_des.setText(law.getmDescription());
                 update_activate.setText(law.getmActivate());
-               // update_image.setImageBitmap(BitmapFactory.decodeByteArray(law.getmImage(), 0, law.getmImage().length));
+
                 btn_save.setEnabled(true);
             }
         });
@@ -105,24 +105,6 @@ public class UpdateLaw extends AppCompatActivity {
 
     }
 
-   /* protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == 1111 && resultCode == RESULT_OK) {
-            Bitmap image = (Bitmap) data.getExtras().get("data");
-            update_image.setImageBitmap(image);
-        }
-    }*/
-/*
-    public byte[] Image_To_Byte(ImageView imageView) {
-        BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
-        Bitmap bmp = drawable.getBitmap();
-
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-        byte[] byteArray = stream.toByteArray();
-        return byteArray;
-    }
-*/
-
     public void init_Wiget() {
         lvLaw = findViewById(R.id.lv_law);
         tv_find_name = findViewById(R.id.update_find_name);
@@ -132,7 +114,7 @@ public class UpdateLaw extends AppCompatActivity {
         update_name = findViewById(R.id.update_name);
         update_des = findViewById(R.id.update_description);
         update_activate = findViewById(R.id.update_activate);
-       // update_image = findViewById(R.id.update_image);
+
 
     }
 

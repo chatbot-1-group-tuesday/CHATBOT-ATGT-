@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
+    android:outlineAmbientShadowColor="@color/design_default_color_primary"
     android:background="@drawable/nen"
+
     tools:context=".MainActivity">
 
 
@@ -15,27 +16,31 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="xem luật" />
+        android:background="@color/colorAccent"
+        android:textColor="#008000"
+        android:text="Xem Luật" />
 
     <Button
         android:id="@+id/btn_add_law"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="thêm luật" />
+        android:text="Thêm Luật" />
 
     <Button
         android:id="@+id/btn_update"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="cập nhật" />
+        android:background="@color/colorAccent"
+        android:textColor="#008000"
+        android:text="Cập Nhật Luật" />
 
     <Button
         android:id="@+id/btn_delete"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="xóa luật" />
+        android:text="Xóa Luật" />
 
 </LinearLayout>
