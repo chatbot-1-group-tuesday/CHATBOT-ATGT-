@@ -125,10 +125,10 @@ public class DBManager extends SQLiteOpenHelper {
         values.put(COL_NAME, law.getmName());
         values.put(COL_DES, law.getmDescription());
         values.put(COL_ACTIVATE, law.getmActivate());
-      //  values.put(COL_IMAGE, law.getmImage());
+
         db.update(DB_TABLE,values,"Id= "+ law.getmId(),null);
         db.close();
-        Log.d(TAG, "update Law succ ");
+        Log.d(TAG, "Update Law successfully ");
     }
     public int deleteLaw(int Id){
         SQLiteDatabase db = this.getWritableDatabase();

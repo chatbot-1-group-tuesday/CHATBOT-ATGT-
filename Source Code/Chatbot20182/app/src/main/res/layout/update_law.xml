@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#CCFFFF"
-            android:hint="tìm tên Luật                                           " />
+            android:hint="Tìm tên Luật                                           " />
 
         <Button
             android:id="@+id/update_btn_tim_bien"
@@ -61,7 +61,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:background="@drawable/macdinh"/>
+        android:src="@drawable/android_logo"/>
 
     <Button
         android:id="@+id/btn_save"
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textColor="@color/colorxanh"
-        android:text="Lưu luật" />
+        android:text="Cập nhật luật" />
 <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
