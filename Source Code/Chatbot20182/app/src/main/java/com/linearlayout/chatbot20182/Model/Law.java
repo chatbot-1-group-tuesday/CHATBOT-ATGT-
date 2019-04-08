@@ -1,37 +1,49 @@
-package com.linearlayout.chatbot20182.Model;
+package com.linearlayout.chatbot20182.model;
 
-public class Law
-{
-
-    private int mID;
+public class Law {
+    private int mId;
     private String mName;
     private String mDescription;
+   // private byte[] mImage;
+    private String mActivate;
 
-    public Law()
-    {
-
+    public Law(int mId) {
+        this.mId = mId;
     }
-
-
-
-    public Law(int mID, String mName, String mDescription) {
-        this.mID = mID;
+    public Law(String mName, String mDescription, String mActivate) {
         this.mName = mName;
         this.mDescription = mDescription;
+        this.mActivate = mActivate;
+    //    this.mImage = mImage;
     }
 
-    public Law(String mName, String mDescription) {
+    public Law() {
+
+    }
+
+    public Law(int mId, String mName, String mDescription, String mActivate) {
+        this.mId = mId;
         this.mName = mName;
         this.mDescription = mDescription;
+        this.mActivate = mActivate;
+       // this.mImage = mImage;
     }
 
 
-    public int getmID() {
-        return mID;
+  /*  public byte[] getmImage() {
+        return mImage;
+    }*/
+
+  /*  public void setmImage(byte[] mImage) {
+        this.mImage = mImage;
+    }*/
+
+    public int getmId() {
+        return mId;
     }
 
-    public void setmID(int mID) {
-        this.mID = mID;
+    public void setmId(int mId) {
+        this.mId = mId;
     }
 
     public String getmName() {
@@ -49,4 +61,14 @@ public class Law
     public void setmDescription(String mDescription) {
         this.mDescription = mDescription;
     }
+
+    public String getmActivate() {
+        return mActivate;
+    }
+
+    public void setmActivate(String mActivate) {
+        this.mActivate = mActivate;
+    }
+
+
 }

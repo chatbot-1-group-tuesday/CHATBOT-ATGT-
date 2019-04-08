@@ -1,48 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    <EditText
-        android:enabled="false"
-        android:id="@+id/edt_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="ID" />
-    <EditText
-        android:id="@+id/edt_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name" />
+    android:orientation="vertical"
 
-    <EditText
-        android:id="@+id/edt_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Description" />
+    android:background="@drawable/nen"
+    tools:context=".MainActivity">
 
 
-    <LinearLayout
+    <Button
+        android:id="@+id/btn_show_law"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/btn_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Save" />
-        <Button
-            android:enabled="false"
-            android:id="@+id/btn_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Update" />
-    </LinearLayout>
+        android:text="xem luật" />
 
-    <ListView
-        android:id="@+id/lv_law"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <Button
+        android:id="@+id/btn_add_law"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="thêm luật" />
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="cập nhật" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="xóa luật" />
+
 </LinearLayout>

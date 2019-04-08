@@ -5,103 +5,133 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.nfc.Tag;
+import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
+import android.widget.Toast;
 
-import com.linearlayout.chatbot20182.Model.Law;
+import com.linearlayout.chatbot20182.model.Law;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DBManager extends SQLiteOpenHelper
-{
-
-    private final String Tag = "DBManager";
-    private static final String DATABASE_NAME ="law";
-    private static final String TABLE_NAME="lawlist";
-    private static final String ID = "id";
-    private static final String NAME ="name";
-    private static final String DESCRIPTION ="description";
-    private static int VERSION = 60;
-
+public class DBManager extends SQLiteOpenHelper {
+    private final String TAG = "dbManager";
+    private static final String DB_NAME = "chatbotdb";
+    private static final String DB_TABLE = "Law";
+    private static final String COL_ID = "Id";
+    private static final String COL_NAME = "Name";
+    private static final String COL_DES = "Description";
+   // private static final String COL_IMAGE = "Image";
+    private static final String COL_ACTIVATE = "Activate";
+    private static int VERSION = 1;
     private Context context;
-    //Câu truy vấn tạo thêm bảng
-
-    String sqlQuery = "CREATE TABLE "+TABLE_NAME +" (" +
-            ID +" integer primary key, "+
-            NAME + " TEXT, "+
-            DESCRIPTION +" TEXT) ";
+    private String SQLiteQuery = "CREATE TABLE " + DB_TABLE + " (" +
+            COL_ID + " integer primary key, " +
+            COL_NAME + " TEXT, " +
+            COL_DES + " TEXT, " +
+           // COL_IMAGE + " BLOB, " +
+            COL_ACTIVATE + " TEXT )";
 
 
     public DBManager(Context context) {
-        super(context, DATABASE_NAME, null, VERSION);
-        this.context=context;
-        Log.d(Tag,"DB Manager :");
+        super(context, DB_NAME, null, VERSION);
+        this.context = context;
+        Log.d(TAG, "DBManager: ");
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(sqlQuery);
-        Log.d(Tag,"OnCreate");
+        db.execSQL(SQLiteQuery);
+        Log.d(TAG, "onCreate: ");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
-        Log.d(Tag,"OnUpgrade");
-
-
+        Log.d(TAG, "onUpgrade: ");
     }
-    public void addLaw(Law law)
-    {
 
+    public void helo() {
+        Toast.makeText(context, "helo", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "helo: ");
+    }
+
+    public void addLaw(Law law) {
         SQLiteDatabase db = this.getWritableDatabase();
-        //de them doi tuong vao CSDL thi khong the them truc tiep ma phai
-        //dung ContentValues
         ContentValues values = new ContentValues();
-
-        //Sau đó put các giá trị vào value
-        values.put(NAME,law.getmName());
-        values.put(DESCRIPTION,law.getmDescription());
-
-        //Insert ra bảng
-        db.insert(TABLE_NAME,null,values);
+        values.clear();
+        values.put(COL_NAME, law.getmName());
+        values.put(COL_DES, law.getmDescription());
+        values.put(COL_ACTIVATE, law.getmActivate());
+      //  values.put(COL_IMAGE, law.getmImage());
+        db.insert(DB_TABLE, null, values);
         db.close();
-        Log.d(Tag,"Add Law Sucessfully");
+        Log.d(TAG, "addLaw succ ");
+       /* String sqlite= "INSERT INTO law VALUES(null, ?, ?, ?, ?)";
+        SQLiteStatement statement= db.compileStatement(sqlite);
+        statement.clearBindings();
+        statement.bindString(1,law.getmName() );
+        statement.bindString(2, law.getmDescription());
+        statement.bindBlob(3, law.getmImage());
+        statement.bindString(4, "1");*/
+
+
     }
 
-    public List<Law> getAllLaw()
-    {
+    public List<Law> getAllLaw() {
         List<Law> listLaw = new ArrayList<>();
-
-        String selectQuery = "SELECT * FROM "+ TABLE_NAME;
-
-        //giúp database có thể đọc và sửa CSDL
-        SQLiteDatabase db=this.getWritableDatabase();
-
-        //selection args : dieu kien de select , Vd :Lay luat theo id
-        //cursor có mục đích lấy kết quả trả về
-        //cung cấp 1 số phương thức lấy kết quả trả về
-        Cursor cursor = db.rawQuery(selectQuery,null);
-
-        if (cursor.moveToFirst())
-        {
+        String selectQuery = "SELECT * FROM " + DB_TABLE;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
             do {
                 Law law = new Law();
-                law.setmID(cursor.getInt(0));
+                law.setmId(cursor.getInt(0));
                 law.setmName(cursor.getString(1)+"");
                 law.setmDescription(cursor.getString(2)+"");
+               // law.setmImage(cursor.getBlob(3));
+                law.setmActivate(cursor.getString(3)+"");
                 listLaw.add(law);
-            }
-            //check xem sau ket qua dau tien con ket qua nao khong
-            //Nếu kết quả là false thì sẽ không tiếp tục thực hiện do
-            while (cursor.moveToNext());
-
+            } while (cursor.moveToNext());
         }
-          db.close();
-          return listLaw;
+        db.close();
+        return listLaw;
     }
 
+    public List<Law> getAllLawByName(String name) {
+        List<Law> listLaw = new ArrayList<>();
+        String selectQuery = "SELECT * FROM " + DB_TABLE +" WHERE name LIKE '%"+ name+"%'";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                Law law = new Law();
+                law.setmId(cursor.getInt(0));
+                law.setmName(cursor.getString(1)+"");
+                law.setmDescription(cursor.getString(2)+"");
+               // law.setmImage(cursor.getBlob(3));
+                law.setmActivate(cursor.getString(3)+"");
 
+                listLaw.add(law);
+            } while (cursor.moveToNext());
+        }
+        db.close();
+        return listLaw;
+    }
+    public void updateLaw(Law law){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.clear();
+        values.put(COL_NAME, law.getmName());
+        values.put(COL_DES, law.getmDescription());
+        values.put(COL_ACTIVATE, law.getmActivate());
+      //  values.put(COL_IMAGE, law.getmImage());
+        db.update(DB_TABLE,values,"Id= "+ law.getmId(),null);
+        db.close();
+        Log.d(TAG, "update Law succ ");
+    }
+    public int deleteLaw(int Id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(DB_TABLE, COL_ID +"=?", new String[]{String.valueOf(Id)});
+    }
 }
