@@ -48,35 +48,32 @@ public class AddSign extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     Sign sign = createSign();
-                    if (sign.getmName() == "" && sign.getmDescription() !="" && sign.getmActivate()!="") {
-                        dbManager.addSign(sign);
-                        Toast.makeText(getApplicationContext(), "đã thêm", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        Toast.makeText(getApplicationContext(), "mời nhập đủ các trường", Toast.LENGTH_SHORT).show();
-                    }
+                    dbManager.addSign(sign);
+                    Toast.makeText(getApplicationContext(), "đã thêm", Toast.LENGTH_SHORT).show();
+               
 
-                   // Toast.makeText(getApplicationContext(), "Activate :" + ActivateStatus() + "\n" , Toast.LENGTH_LONG).show();
+                    // Toast.makeText(getApplicationContext(), "Activate :" + ActivateStatus() + "\n" , Toast.LENGTH_LONG).show();
 
 
                 } catch (Exception e) {
                     Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
-                     }
+                }
             }
         });
     }
 
     private String ActivateStatus() {
         if (swActivate.isChecked()) {
-            return  "1";
+            return "1";
         } else {
-            return  "0";
+            return "0";
         }
     }
+
     private Sign createSign() {
         String name = edtName.getText().toString();
         String des = editDes.getText().toString();
-        String activate= ActivateStatus();
+        String activate = ActivateStatus();
         byte[] imageByte = Image_To_Byte(editImage);
 
         Sign Sign = new Sign(name, des, imageByte, activate);
@@ -85,10 +82,10 @@ public class AddSign extends AppCompatActivity {
     }
 
     private void initWiget() {
-        edtName =  findViewById(R.id.edit_name);
-        editDes =  findViewById(R.id.edit_description);
-        btnSave =  findViewById(R.id.btn_save);
-        editImage =  findViewById(R.id.edit_image);
+        edtName = findViewById(R.id.edit_name);
+        editDes = findViewById(R.id.edit_description);
+        btnSave = findViewById(R.id.btn_save);
+        editImage = findViewById(R.id.edit_image);
         swActivate = findViewById(R.id.sw_activate);
 
     }
