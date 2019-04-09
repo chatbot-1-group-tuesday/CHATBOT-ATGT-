@@ -11,23 +11,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.linearlayout.chatbot20182.R;
-import com.linearlayout.chatbot20182.model.Law;
+import com.linearlayout.chatbot20182.model.Sign;
 
 import java.util.List;
 
-public class CustomAdapter extends ArrayAdapter<Law> {
+public class CustomAdapter extends ArrayAdapter<Sign> {
 
 
     private Context context;
     private int resource;
-    private List<Law> Listlaw;
+    private List<Sign> ListSign;
 
 
-    public CustomAdapter(Context context, int resource, List<Law> objects) {
+    public CustomAdapter(Context context, int resource, List<Sign> objects) {
         super(context, resource, objects);
         this.context = context;
         this.resource = resource;
-        this.Listlaw = objects;
+        this.ListSign = objects;
     }
 
 
@@ -36,7 +36,7 @@ public class CustomAdapter extends ArrayAdapter<Law> {
         ViewHolder viewHolder; //khoi tao viewholder
         if (convertView == null) {
             viewHolder = new ViewHolder();
-            convertView = LayoutInflater.from(context).inflate(R.layout.row_show_law, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.row_show_sign, parent, false);
             viewHolder.tv_id = convertView.findViewById(R.id.tv_id);
             viewHolder.tv_name = convertView.findViewById(R.id.tv_name);
             viewHolder.tv_des = convertView.findViewById(R.id.tv_des);
@@ -48,12 +48,12 @@ public class CustomAdapter extends ArrayAdapter<Law> {
             viewHolder = (ViewHolder) convertView.getTag();
 
         }
-        Law law = Listlaw.get(position);
-        viewHolder.tv_id.setText(String.valueOf(law.getmId()));
-        viewHolder.tv_name.setText(String.valueOf(law.getmName()));
-        viewHolder.tv_des.setText(String.valueOf(law.getmDescription()));
-        viewHolder.tv_activate.setText(String.valueOf(law.getmActivate()));
-        Bitmap bitmap= BitmapFactory.decodeByteArray(law.getmImage(),0,law.getmImage().length );
+        Sign Sign = ListSign.get(position);
+        viewHolder.tv_id.setText(String.valueOf(Sign.getmId()));
+        viewHolder.tv_name.setText(String.valueOf(Sign.getmName()));
+        viewHolder.tv_des.setText(String.valueOf(Sign.getmDescription()));
+        viewHolder.tv_activate.setText(String.valueOf(Sign.getmActivate()));
+        Bitmap bitmap= BitmapFactory.decodeByteArray(Sign.getmImage(),0,Sign.getmImage().length );
         viewHolder.tv_image.setImageBitmap(bitmap);
 
         return convertView;

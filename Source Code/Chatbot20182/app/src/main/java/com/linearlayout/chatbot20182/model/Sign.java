@@ -1,27 +1,27 @@
 package com.linearlayout.chatbot20182.model;
 
-public class Law {
+public class Sign {
     private int mId;
     private String mName;
     private String mDescription;
     private byte[] mImage;
     private String mActivate;
 
-    public Law(int mId) {
+    public Sign(int mId) {
         this.mId = mId;
     }
-    public Law(String mName, String mDescription,byte[] mImage, String mActivate) {
+    public Sign(String mName, String mDescription,byte[] mImage, String mActivate) {
         this.mName = mName;
         this.mDescription = mDescription;
         this.mActivate = mActivate;
         this.mImage = mImage;
     }
 
-    public Law() {
+    public Sign() {
 
     }
 
-    public Law(int mId, String mName, String mDescription, byte[] mImage, String mActivate) {
+    public Sign(int mId, String mName, String mDescription, byte[] mImage, String mActivate) {
         this.mId = mId;
         this.mName = mName;
         this.mDescription = mDescription;

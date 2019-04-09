@@ -12,8 +12,8 @@ import com.linearlayout.chatbot20182.data.DBManager;
 public class MainActivity extends AppCompatActivity {
 
 
-    private Button btnShowLaw;
-    private Button btnAddLaw;
+    private Button btnShowSign;
+    private Button btnAddSign;
     private Button btnUpdate;
     private Button btnDelete;
 
@@ -24,31 +24,31 @@ public class MainActivity extends AppCompatActivity {
         final DBManager dbManager = new DBManager(this);
         initWiget();
 
-        btnShowLaw.setOnClickListener(new View.OnClickListener() {
+        btnShowSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ShowLaw.class);
+                Intent intent = new Intent(MainActivity.this, ShowSign.class);
                 startActivity(intent);
             }
         });
-        btnAddLaw.setOnClickListener(new View.OnClickListener() {
+        btnAddSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddLaw.class);
+                Intent intent = new Intent(MainActivity.this, AddSign.class);
                 startActivity(intent);
             }
         });
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, UpdateLaw.class);
+                Intent intent = new Intent(MainActivity.this, UpdateSign.class);
                 startActivity(intent);
             }
         });
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DeleteLaw.class);
+                Intent intent = new Intent(MainActivity.this, DeleteSign.class);
                 startActivity(intent);
             }
         });
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
     }
     private void initWiget() {
 
-        btnShowLaw = (Button) findViewById(R.id.btn_show_law);
-        btnAddLaw = (Button) findViewById(R.id.btn_add_law);
+        btnShowSign = (Button) findViewById(R.id.btn_show_sign);
+        btnAddSign = (Button) findViewById(R.id.btn_add_Sign);
         btnUpdate=(Button)findViewById(R.id.btn_update);
         btnDelete=(Button)findViewById(R.id.btn_delete);
     }

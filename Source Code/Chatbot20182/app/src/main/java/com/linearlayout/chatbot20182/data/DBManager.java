@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.linearlayout.chatbot20182.model.Law;
+import com.linearlayout.chatbot20182.model.Sign;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.List;
 public class DBManager extends SQLiteOpenHelper {
     private final String TAG = "dbManager";
     private static final String DB_NAME = "chatbotdb";
-    private static final String DB_TABLE = "Law";
+    private static final String DB_TABLE = "Sign";
     private static final String COL_ID = "Id";
     private static final String COL_NAME = "Name";
     private static final String COL_DES = "Description";
@@ -54,81 +54,81 @@ public class DBManager extends SQLiteOpenHelper {
         Log.d(TAG, "helo: ");
     }
 
-    public void addLaw(Law law) {
+    public void addSign(Sign Sign) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.clear();
-        values.put(COL_NAME, law.getmName());
-        values.put(COL_DES, law.getmDescription());
-        values.put(COL_ACTIVATE, law.getmActivate());
-        values.put(COL_IMAGE, law.getmImage());
+        values.put(COL_NAME, Sign.getmName());
+        values.put(COL_DES, Sign.getmDescription());
+        values.put(COL_ACTIVATE, Sign.getmActivate());
+        values.put(COL_IMAGE, Sign.getmImage());
         db.insert(DB_TABLE, null, values);
         db.close();
-        Log.d(TAG, "addLaw succ ");
-       /* String sqlite= "INSERT INTO law VALUES(null, ?, ?, ?, ?)";
+        Log.d(TAG, "addSign succ ");
+       /* String sqlite= "INSERT INTO Sign VALUES(null, ?, ?, ?, ?)";
         SQLiteStatement statement= db.compileStatement(sqlite);
         statement.clearBindings();
-        statement.bindString(1,law.getmName() );
-        statement.bindString(2, law.getmDescription());
-        statement.bindBlob(3, law.getmImage());
+        statement.bindString(1,Sign.getmName() );
+        statement.bindString(2, Sign.getmDescription());
+        statement.bindBlob(3, Sign.getmImage());
         statement.bindString(4, "1");*/
 
 
     }
 
-    public List<Law> getAllLaw() {
-        List<Law> listLaw = new ArrayList<>();
+    public List<Sign> getAllSign() {
+        List<Sign> listSign = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + DB_TABLE;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
-                Law law = new Law();
-                law.setmId(cursor.getInt(0));
-                law.setmName(cursor.getString(1)+"");
-                law.setmDescription(cursor.getString(2)+"");
-                law.setmImage(cursor.getBlob(3));
+                Sign Sign = new Sign();
+                Sign.setmId(cursor.getInt(0));
+                Sign.setmName(cursor.getString(1)+"");
+                Sign.setmDescription(cursor.getString(2)+"");
+                Sign.setmImage(cursor.getBlob(3));
 
-                listLaw.add(law);
+                listSign.add(Sign);
             } while (cursor.moveToNext());
         }
         db.close();
-        return listLaw;
+        return listSign;
     }
 
-    public List<Law> getAllLawByName(String name) {
-        List<Law> listLaw = new ArrayList<>();
+    public List<Sign> getAllSignByName(String name) {
+        List<Sign> listSign = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + DB_TABLE +" WHERE name LIKE '%"+ name+"%'";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
-                Law law = new Law();
-                law.setmId(cursor.getInt(0));
-                law.setmName(cursor.getString(1)+"");
-                law.setmDescription(cursor.getString(2)+"");
-                law.setmImage(cursor.getBlob(3));
-                law.setmActivate(cursor.getString(4)+"");
+                Sign Sign = new Sign();
+                Sign.setmId(cursor.getInt(0));
+                Sign.setmName(cursor.getString(1)+"");
+                Sign.setmDescription(cursor.getString(2)+"");
+                Sign.setmImage(cursor.getBlob(3));
+                Sign.setmActivate(cursor.getString(4)+"");
 
-                listLaw.add(law);
+                listSign.add(Sign);
             } while (cursor.moveToNext());
         }
         db.close();
-        return listLaw;
+        return listSign;
     }
-    public void updateLaw(Law law){
+    public void updateSign(Sign Sign){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.clear();
-        values.put(COL_NAME, law.getmName());
-        values.put(COL_DES, law.getmDescription());
-        values.put(COL_ACTIVATE, law.getmActivate());
-        values.put(COL_IMAGE, law.getmImage());
-        db.update(DB_TABLE,values,"Id= "+ law.getmId(),null);
+        values.put(COL_NAME, Sign.getmName());
+        values.put(COL_DES, Sign.getmDescription());
+        values.put(COL_ACTIVATE, Sign.getmActivate());
+        values.put(COL_IMAGE, Sign.getmImage());
+        db.update(DB_TABLE,values,"Id= "+ Sign.getmId(),null);
         db.close();
-        Log.d(TAG, "update Law succ ");
+        Log.d(TAG, "update Sign succ ");
     }
-    public int deleteLaw(int Id){
+    public int deleteSign(int Id){
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(DB_TABLE, COL_ID +"=?", new String[]{String.valueOf(Id)});
     }

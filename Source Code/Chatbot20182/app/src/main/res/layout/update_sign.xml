@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UpdateLaw">>
+    tools:context=".UpdateSign">>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -28,8 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:enabled="false"
-        android:hint="id"
-       />
+        android:hint="id" />
 
     <EditText
         android:id="@+id/update_name"
@@ -44,11 +43,11 @@
         android:hint="Description" />
 
 
-    <EditText
-        android:id="@+id/update_activate"
-        android:layout_width="match_parent"
+    <Switch
+        android:id="@+id/update_sw_activate"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Activate" />
+        android:text="Activate" />
 
     <ImageView
         android:id="@+id/update_image"
@@ -64,10 +63,13 @@
         android:layout_gravity="center"
         android:text="save" />
 
-
-    <ListView
-        android:id="@+id/lv_law"
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="700dp"></ListView>
+        android:layout_height="wrap_content">
 
+        <ListView
+            android:id="@+id/lv_Sign"
+            android:layout_width="wrap_content"
+            android:layout_height="700dp"></ListView>
+    </RelativeLayout>
 </LinearLayout>

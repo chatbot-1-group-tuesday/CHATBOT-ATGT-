@@ -11,28 +11,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.Toast;
 
-import com.linearlayout.chatbot20182.adapter.CustomAdapter;
 import com.linearlayout.chatbot20182.data.DBManager;
-import com.linearlayout.chatbot20182.model.Law;
+import com.linearlayout.chatbot20182.model.Sign;
 
 import java.io.ByteArrayOutputStream;
-import java.util.List;
 
-public class AddLaw extends AppCompatActivity {
+public class AddSign extends AppCompatActivity {
 
     private EditText edtName;
     private EditText editDes;
-    private EditText editActivate;
     private ImageView editImage;
     private Button btnSave;
+    private Switch swActivate;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_law);
+        setContentView(R.layout.add_sign);
         final DBManager dbManager = new DBManager(this);
         initWiget();
         editImage.setOnClickListener(new View.OnClickListener() {
@@ -48,37 +47,49 @@ public class AddLaw extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Law law = createLaw();
-                    if (law != null) {
-                        dbManager.addLaw(law);
+                    Sign sign = createSign();
+                    if (sign.getmName() == "" && sign.getmDescription() !="" && sign.getmActivate()!="") {
+                        dbManager.addSign(sign);
+                        Toast.makeText(getApplicationContext(), "đã thêm", Toast.LENGTH_SHORT).show();
                     }
-                    Toast.makeText(getApplicationContext(), "ok nhe", Toast.LENGTH_SHORT).show();
+                    else {
+                        Toast.makeText(getApplicationContext(), "mời nhập đủ các trường", Toast.LENGTH_SHORT).show();
+                    }
 
-                }catch (Exception e){
-                    Toast.makeText(getApplicationContext(),e.toString(), Toast.LENGTH_SHORT).show();
-                }
+                   // Toast.makeText(getApplicationContext(), "Activate :" + ActivateStatus() + "\n" , Toast.LENGTH_LONG).show();
+
+
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
+                     }
             }
         });
     }
 
-
-    private Law createLaw() {
+    private String ActivateStatus() {
+        if (swActivate.isChecked()) {
+            return  "1";
+        } else {
+            return  "0";
+        }
+    }
+    private Sign createSign() {
         String name = edtName.getText().toString();
         String des = editDes.getText().toString();
-        String activate = editActivate.getText().toString();
-        byte[] imageByte =Image_To_Byte(editImage);
+        String activate= ActivateStatus();
+        byte[] imageByte = Image_To_Byte(editImage);
 
-        Law law = new Law(name, des, imageByte, activate);
+        Sign Sign = new Sign(name, des, imageByte, activate);
 
-        return law;
+        return Sign;
     }
 
     private void initWiget() {
-        edtName = (EditText) findViewById(R.id.edit_name);
-        editDes = (EditText) findViewById(R.id.edit_description);
-        editActivate = (EditText) findViewById(R.id.edit_activate);
-        btnSave = (Button) findViewById(R.id.btn_save);
-        editImage = (ImageView) findViewById(R.id.edit_image);
+        edtName =  findViewById(R.id.edit_name);
+        editDes =  findViewById(R.id.edit_description);
+        btnSave =  findViewById(R.id.btn_save);
+        editImage =  findViewById(R.id.edit_image);
+        swActivate = findViewById(R.id.sw_activate);
 
     }
 

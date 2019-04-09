@@ -23,18 +23,19 @@
         android:hint="Name"
         android:inputType="" />
 
+
+
     <EditText
         android:id="@+id/edit_description"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:hint="Description" />
 
-
-    <EditText
-        android:id="@+id/edit_activate"
-        android:layout_width="match_parent"
+    <Switch
+        android:id="@+id/sw_activate"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Activate" />
+        android:text="Activate" />
 
     <ImageView
         android:id="@+id/edit_image"
