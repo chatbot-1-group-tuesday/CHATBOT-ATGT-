@@ -50,7 +50,7 @@ public class AddSign extends AppCompatActivity {
                     Sign sign = createSign();
                     dbManager.addSign(sign);
                     Toast.makeText(getApplicationContext(), "đã thêm", Toast.LENGTH_SHORT).show();
-               
+
 
                     // Toast.makeText(getApplicationContext(), "Activate :" + ActivateStatus() + "\n" , Toast.LENGTH_LONG).show();
 
