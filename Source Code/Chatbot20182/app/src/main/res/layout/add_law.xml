@@ -5,12 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context=".MainActivityLaw">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:text="Tạo Mới Biển Báo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Thêm mới luật giao thông"
+        android:textColor="#00DD00"
+        android:background="#FFF0"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -19,36 +23,36 @@
     <EditText
         android:id="@+id/edit_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:hint="Name"
+        android:background="#CCFFFF"
         android:inputType="" />
-
-
 
     <EditText
         android:id="@+id/edit_description"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="400dp"
+        android:background="@color/colorvangnhat"
+        android:textColor="#FF3333"
         android:hint="Description" />
 
-    <Switch
-        android:id="@+id/sw_activate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Activate" />
 
-    <ImageView
-        android:id="@+id/edit_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/macdinh"
-    android:layout_gravity="center"/>
+    <EditText
+        android:id="@+id/edit_activate"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#CCFFFF"
+        android:hint="Activate" />
+
+
     <Button
         android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="save" />
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorxanh"
+        android:text="Lưu" />
 
 
 </LinearLayout>
