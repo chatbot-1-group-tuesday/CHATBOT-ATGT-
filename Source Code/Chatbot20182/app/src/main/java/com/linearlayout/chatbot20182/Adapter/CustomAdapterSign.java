@@ -35,6 +35,7 @@ public class CustomAdapterSign extends ArrayAdapter<Sign> {
         ViewHolder viewHolder; //khoi tao viewholder
         if (convertView == null) {
             viewHolder = new ViewHolder();
+
             convertView = LayoutInflater.from(context).inflate(R.layout.row_show_sign, parent, false);
             viewHolder.tv_id = convertView.findViewById(R.id.tv_id);
             viewHolder.tv_name = convertView.findViewById(R.id.tv_name);
