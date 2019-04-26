@@ -25,6 +25,8 @@ public class DeleteLaw extends AppCompatActivity {
     private CustomAdapter customAdapter;
 
     @Override
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.delete_law);
@@ -45,6 +47,9 @@ public class DeleteLaw extends AppCompatActivity {
                 lawByName = dbManager.getAllLawByName(tv_find_name.getText().toString());
             }
         });
+
+        //Bắt sự kiện cho Listview Law
+
         lvLaw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -35,6 +35,7 @@ public class UpdateLaw extends AppCompatActivity {
     private TextView update_activate;
 
 
+
     private CustomAdapter customAdapter;
 
     @Override
