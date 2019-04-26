@@ -35,6 +35,7 @@ public class UpdateLaw extends AppCompatActivity {
 
     private CustomAdapterLaw customAdapter;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_law);
