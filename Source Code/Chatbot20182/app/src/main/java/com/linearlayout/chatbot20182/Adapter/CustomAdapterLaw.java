@@ -38,6 +38,9 @@ public class CustomAdapterLaw extends ArrayAdapter<Law> {
             viewHolder = new ViewHolder();
             convertView = LayoutInflater.from(context).inflate(R.layout.row_show_law, parent, false);
             viewHolder.tv_id = convertView.findViewById(R.id.tv_id);
+
+
+
             viewHolder.tv_name = convertView.findViewById(R.id.tv_name);
             viewHolder.tv_des = convertView.findViewById(R.id.tv_des);
             // viewHolder.tv_image= convertView.findViewById(R.id.tv_image);
