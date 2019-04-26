@@ -9,49 +9,55 @@ import android.widget.Button;
 import com.linearlayout.chatbot20182.data.DBManager;
 
 
-public class MainActivity extends AppCompatActivity {
-
-
+public class MainActivityLaw extends AppCompatActivity {
     private Button btnShowLaw;
     private Button btnAddLaw;
     private Button btnUpdate;
     private Button btnDelete;
+    private Button btnSign;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_law);
         final DBManager dbManager = new DBManager(this);
         initWiget();
 
         btnShowLaw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ShowLaw.class);
+                Intent intent = new Intent(MainActivityLaw.this, ShowLaw.class);
                 startActivity(intent);
             }
         });
         btnAddLaw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddLaw.class);
+                Intent intent = new Intent(MainActivityLaw.this, AddLaw.class);
                 startActivity(intent);
             }
         });
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, UpdateLaw.class);
+                Intent intent = new Intent(MainActivityLaw.this, UpdateLaw.class);
                 startActivity(intent);
             }
         });
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DeleteLaw.class);
+                Intent intent = new Intent(MainActivityLaw.this, DeleteLaw.class);
                 startActivity(intent);
             }
         });
+      /*  btnSign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivityLaw.this, MainActivitySign.class);
+                startActivity(intent);
+            }
+        });*/
 
     }
     private void initWiget() {
@@ -60,5 +66,9 @@ public class MainActivity extends AppCompatActivity {
         btnAddLaw = (Button) findViewById(R.id.btn_add_law);
         btnUpdate=(Button)findViewById(R.id.btn_update);
         btnDelete=(Button)findViewById(R.id.btn_delete);
+       // btnSign=findViewById(R.id.btn_sign);
+
+
     }
+
 }

@@ -1,4 +1,5 @@
 package com.linearlayout.chatbot20182;
+
 import android.os.Bundle;
 
 import android.view.View;
@@ -8,53 +9,51 @@ import android.widget.ListView;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.linearlayout.chatbot20182.Adapter.CustomAdapterLaw;
+
+import com.linearlayout.chatbot20182.Adapter.CustomAdapterSign;
 import com.linearlayout.chatbot20182.data.DBManager;
-import com.linearlayout.chatbot20182.model.Law;
+import com.linearlayout.chatbot20182.model.Sign;
+
 import java.util.List;
 
-public class DeleteLaw extends AppCompatActivity {
-    private List<Law> lawByName;
-    private  List<Law> allLaw;
-    private ListView lvLaw;
+public class DeleteSign extends AppCompatActivity {
+    private List<Sign> SignByName;
+    private List<Sign> allSign;
+    private ListView lvSign;
     private TextView tv_find_name;
     private Button btn_find_name;
     private Button btn_delete;
     private TextView delete_id;
 
-    private CustomAdapterLaw customAdapter;
+    private CustomAdapterSign customAdapter;
 
     @Override
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.delete_law);
+        setContentView(R.layout.delete_sign);
         final DBManager dbManager = new DBManager(this);
         init_Wiget();
-
+        btn_delete.setEnabled(false);
         btn_find_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    lawByName = dbManager.getAllLawByName(tv_find_name.getText().toString());
+                    SignByName = dbManager.getAllSignByName(tv_find_name.getText().toString());
                     setAdapter();
-                    Toast.makeText(getApplicationContext(), "Đã tìm thấy Luật trong CSDL", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "đã hiện danh sách", Toast.LENGTH_SHORT).show();
 
                 } catch (Exception e) {
                     Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
                 }
-                lawByName = dbManager.getAllLawByName(tv_find_name.getText().toString());
+                SignByName = dbManager.getAllSignByName(tv_find_name.getText().toString());
             }
         });
-
-        //Bắt sự kiện cho Listview Law
-
-        lvLaw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvSign.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Law law = lawByName.get(position);
-                delete_id.setText(String.valueOf(law.getmId()));
+                Sign Sign = SignByName.get(position);
+                delete_id.setText(String.valueOf(Sign.getmId()));
+                btn_delete.setEnabled(true);
             }
         });
         btn_delete.setOnClickListener(new View.OnClickListener() {
@@ -62,27 +61,30 @@ public class DeleteLaw extends AppCompatActivity {
             public void onClick(View v) {
 
                 int id = Integer.parseInt(delete_id.getText().toString());
-                dbManager.deleteLaw(id);
+                dbManager.deleteSign(id);
                 customAdapter.notifyDataSetChanged();
+                Toast.makeText(getApplicationContext(), "đã xóa", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
+
     public void init_Wiget() {
-        lvLaw = findViewById(R.id.lv_law);
+        lvSign = findViewById(R.id.lv_sign);
         tv_find_name = findViewById(R.id.delete_find_name);
         btn_find_name = findViewById(R.id.delete_btn_tim_bien);
         btn_delete = findViewById(R.id.btn_delete);
         delete_id = findViewById(R.id.delete_id);
     }
+
     private void setAdapter() {
         if (customAdapter == null) {
-            customAdapter = new CustomAdapterLaw(this, R.layout.row_show_law, lawByName);
-            lvLaw.setAdapter(customAdapter);
+            customAdapter = new CustomAdapterSign(this, R.layout.row_show_sign, SignByName);
+            lvSign.setAdapter(customAdapter);
         } else {
             customAdapter.notifyDataSetChanged();
-            lvLaw.setSelection(customAdapter.getCount() - 1);
+            lvSign.setSelection(customAdapter.getCount() - 1);
         }
     }
 
 }
-

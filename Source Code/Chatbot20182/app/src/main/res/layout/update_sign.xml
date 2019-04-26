@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UpdateSign">>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/update_find_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="tìm tên biển                                            " />
+
+        <Button
+            android:id="@+id/update_btn_tim_bien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tìm" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/update_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:hint="id" />
+
+    <EditText
+        android:id="@+id/update_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/update_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description" />
+
+
+    <Switch
+        android:id="@+id/update_sw_activate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activate" />
+
+    <ImageView
+        android:id="@+id/update_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:src="@drawable/macdinh" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="save" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:id="@+id/lv_Sign"
+            android:layout_width="wrap_content"
+            android:layout_height="700dp"></ListView>
+    </RelativeLayout>
+</LinearLayout>
