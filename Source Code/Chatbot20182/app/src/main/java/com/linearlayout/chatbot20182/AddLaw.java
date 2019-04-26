@@ -42,7 +42,7 @@ public class AddLaw extends AppCompatActivity {
                     if (law != null) {
                         dbManager.addLaw(law);
                     }
-                    Toast.makeText(getApplicationContext(), "Đã thêm luật thành công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Đã thêm luật thành công vào CSDL", Toast.LENGTH_SHORT).show();
 
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(),e.toString(), Toast.LENGTH_SHORT).show();
