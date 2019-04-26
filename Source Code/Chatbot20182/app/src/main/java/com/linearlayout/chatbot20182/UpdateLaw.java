@@ -27,8 +27,7 @@ public class UpdateLaw extends AppCompatActivity {
     private TextView update_activate;
 
 
-    private CustomAdapterLaw customAdapter;
-
+    private CustomAdapter customAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
