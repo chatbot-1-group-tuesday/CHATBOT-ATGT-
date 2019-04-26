@@ -37,7 +37,7 @@ public class DeleteLaw extends AppCompatActivity {
                 try {
                     lawByName = dbManager.getAllLawByName(tv_find_name.getText().toString());
                     setAdapter();
-                    Toast.makeText(getApplicationContext(), "Đã tìm thấy luật", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Đã tìm thấy Luật trong CSDL", Toast.LENGTH_SHORT).show();
 
                 } catch (Exception e) {
                     Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
