@@ -43,11 +43,6 @@
         android:layout_gravity="center"
         android:text="Xóa Luật" />
 
-    <Button
-        android:id="@+id/btn_sign"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="sign" />
+
 
 </LinearLayout>

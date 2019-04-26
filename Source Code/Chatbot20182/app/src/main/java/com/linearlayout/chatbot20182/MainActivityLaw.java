@@ -51,13 +51,13 @@ public class MainActivityLaw extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btnSign.setOnClickListener(new View.OnClickListener() {
+      /*  btnSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivityLaw.this, MainActivitySign.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
     }
     private void initWiget() {
@@ -66,7 +66,7 @@ public class MainActivityLaw extends AppCompatActivity {
         btnAddLaw = (Button) findViewById(R.id.btn_add_law);
         btnUpdate=(Button)findViewById(R.id.btn_update);
         btnDelete=(Button)findViewById(R.id.btn_delete);
-        btnSign=findViewById(R.id.btn_sign);
+       // btnSign=findViewById(R.id.btn_sign);
 
 
     }
