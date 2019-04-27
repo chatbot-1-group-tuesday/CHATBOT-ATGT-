@@ -1,4 +1,4 @@
-package com.linearlayout.chatbot20182.model;
+package com.linearlayout.chatbot20182.Model;
 
 public class Law {
     private int mId;
