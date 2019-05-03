@@ -12,7 +12,7 @@
 
     <Button
         android:id="@+id/btn_law"
-        android:layout_width="200dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@color/colorAccent"
@@ -21,7 +21,7 @@
 
     <Button
         android:id="@+id/btn_sign"
-        android:layout_width="200dp"
+        android:layout_width="135dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@color/colorxanh"
@@ -29,9 +29,14 @@
 
 
 
-
-
-
+    <Button
+        android:id="@+id/btn_chat"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:text="CHAT" />
 
 
 </LinearLayout>
+
