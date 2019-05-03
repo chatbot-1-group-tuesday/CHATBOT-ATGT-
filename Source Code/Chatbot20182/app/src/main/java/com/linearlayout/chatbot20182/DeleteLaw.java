@@ -67,6 +67,7 @@ public class DeleteLaw extends AppCompatActivity {
             }
         });
     }
+
     public void init_Wiget() {
         lvLaw = findViewById(R.id.lv_law);
         tv_find_name = findViewById(R.id.delete_find_name);
