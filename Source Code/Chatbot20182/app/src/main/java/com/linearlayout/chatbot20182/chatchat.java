@@ -1,4 +1,6 @@
-package com.linearlayout.chatchat;
+package com.linearlayout.chatbot20182;
+
+
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +20,7 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Chatchat extends AppCompatActivity {
+public class chatchat extends AppCompatActivity {
 
     TextView messagesTextView;
     EditText inputEditText;
@@ -29,7 +31,7 @@ public class Chatchat extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.Chat_main);
+        setContentView(R.layout.chat_main);
 
         context=this;
         //ánh xạ thuộc tính cho các view trong layout
@@ -88,7 +90,7 @@ public class Chatchat extends AppCompatActivity {
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject response) {
-                            // String outputAssistant="";
+                        // String outputAssistant="";
 
                         try {
                             String outputJasonObject=response.getJSONObject("output").getJSONArray("text").getString(0);
