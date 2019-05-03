@@ -1,4 +1,4 @@
-package com.linearlayout.chatchat;
+package com.linearlayout.chatbot20182;
 
 import org.junit.Test;
 
