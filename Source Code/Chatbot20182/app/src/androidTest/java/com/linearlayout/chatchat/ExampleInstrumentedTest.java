@@ -1,4 +1,4 @@
-package com.linearlayout.chatbot20182;
+package com.linearlayout.chatchat;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.linearlayout.chatbot20182", appContext.getPackageName());
+        assertEquals("com.linearlayout.chatchat", appContext.getPackageName());
     }
 }
