@@ -18,7 +18,7 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Chatchat extends AppCompatActivity {
+public class chatchat extends AppCompatActivity {
 
     TextView messagesTextView;
     EditText inputEditText;
@@ -29,7 +29,7 @@ public class Chatchat extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.Chat_main);
+        setContentView(R.layout.chat_main);
 
         context=this;
         //ánh xạ thuộc tính cho các view trong layout

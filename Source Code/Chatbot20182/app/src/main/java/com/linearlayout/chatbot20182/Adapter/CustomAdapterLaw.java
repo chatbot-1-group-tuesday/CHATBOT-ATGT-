@@ -10,8 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.linearlayout.chatbot20182.R;
+//import com.linearlayout.chatbot20182.R;
 import com.linearlayout.chatbot20182.model.Law;
+import com.linearlayout.chatchat.R;
 
 import java.util.List;
 
