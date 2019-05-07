@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
-import com.linearlayout.chatbot20182.Adapter.CustomAdapterLaw;
+import com.linearlayout.chatbot20182.Adapter.CustomAdapter;
 import com.linearlayout.chatbot20182.data.DBManager;
 import com.linearlayout.chatbot20182.model.Law;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public class ShowLaw extends AppCompatActivity {
     private List<Law> law;
     private ListView lvLaw;
-    private CustomAdapterLaw customAdapter;
+    private CustomAdapter customAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class ShowLaw extends AppCompatActivity {
 
     private void setAdapter() {
         if (customAdapter == null) {
-            customAdapter = new CustomAdapterLaw(this, R.layout.row_show_law, law);
+            customAdapter = new CustomAdapter(this, R.layout.row_show_law, law);
         }
         lvLaw.setAdapter(customAdapter);
 

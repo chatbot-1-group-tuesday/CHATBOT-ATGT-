@@ -8,7 +8,7 @@
     android:outlineAmbientShadowColor="@color/design_default_color_primary"
     android:background="@drawable/nen"
 
-    tools:context=".MainActivityLaw">
+    tools:context=".MainActivity">
 
 
     <Button
@@ -42,7 +42,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Xóa Luật" />
-
-
 
 </LinearLayout>

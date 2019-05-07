@@ -8,7 +8,7 @@ import android.widget.ListView;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.linearlayout.chatbot20182.Adapter.CustomAdapterLaw;
+import com.linearlayout.chatbot20182.Adapter.CustomAdapter;
 import com.linearlayout.chatbot20182.data.DBManager;
 import com.linearlayout.chatbot20182.model.Law;
 import java.util.List;
@@ -22,11 +22,9 @@ public class DeleteLaw extends AppCompatActivity {
     private Button btn_delete;
     private TextView delete_id;
 
-    private CustomAdapterLaw customAdapter;
+    private CustomAdapter customAdapter;
 
     @Override
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.delete_law);
@@ -39,7 +37,7 @@ public class DeleteLaw extends AppCompatActivity {
                 try {
                     lawByName = dbManager.getAllLawByName(tv_find_name.getText().toString());
                     setAdapter();
-                    Toast.makeText(getApplicationContext(), "Đã tìm thấy Luật trong CSDL", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Đã tìm thấy luật", Toast.LENGTH_SHORT).show();
 
                 } catch (Exception e) {
                     Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
@@ -47,9 +45,6 @@ public class DeleteLaw extends AppCompatActivity {
                 lawByName = dbManager.getAllLawByName(tv_find_name.getText().toString());
             }
         });
-
-        //Bắt sự kiện cho Listview Law
-
         lvLaw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -67,7 +62,6 @@ public class DeleteLaw extends AppCompatActivity {
             }
         });
     }
-
     public void init_Wiget() {
         lvLaw = findViewById(R.id.lv_law);
         tv_find_name = findViewById(R.id.delete_find_name);
@@ -77,7 +71,7 @@ public class DeleteLaw extends AppCompatActivity {
     }
     private void setAdapter() {
         if (customAdapter == null) {
-            customAdapter = new CustomAdapterLaw(this, R.layout.row_show_law, lawByName);
+            customAdapter = new CustomAdapter(this, R.layout.row_show_law, lawByName);
             lvLaw.setAdapter(customAdapter);
         } else {
             customAdapter.notifyDataSetChanged();
