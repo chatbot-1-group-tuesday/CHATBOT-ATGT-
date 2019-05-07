@@ -15,7 +15,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.linearlayout.chatbot20182.adapter.CustomAdapter;
+
+import com.linearlayout.chatbot20182.Adapter.CustomAdapterSign;
 import com.linearlayout.chatbot20182.data.DBManager;
 import com.linearlayout.chatbot20182.model.Sign;
 
@@ -35,7 +36,7 @@ public class UpdateSign extends AppCompatActivity {
     private ImageView update_image;
     private Switch update_swActivate;
 
-    private CustomAdapter customAdapter;
+    private CustomAdapterSign customAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -160,7 +161,7 @@ public class UpdateSign extends AppCompatActivity {
 
     private void setAdapter() {
         if (customAdapter == null) {
-            customAdapter = new CustomAdapter(this, R.layout.row_show_sign, SignByName);
+            customAdapter = new CustomAdapterSign(this, R.layout.row_show_sign, SignByName);
             lvSign.setAdapter(customAdapter);
         } else {
             customAdapter.notifyDataSetChanged();

@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.linearlayout.chatbot20182.adapter.CustomAdapter;
+import com.linearlayout.chatbot20182.Adapter.CustomAdapterSign;
 import com.linearlayout.chatbot20182.data.DBManager;
 import com.linearlayout.chatbot20182.model.Sign;
 
@@ -25,7 +25,7 @@ public class DeleteSign extends AppCompatActivity {
     private Button btn_delete;
     private TextView delete_id;
 
-    private CustomAdapter customAdapter;
+    private CustomAdapterSign customAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +79,7 @@ public class DeleteSign extends AppCompatActivity {
 
     private void setAdapter() {
         if (customAdapter == null) {
-            customAdapter = new CustomAdapter(this, R.layout.row_show_sign, SignByName);
+            customAdapter = new CustomAdapterSign(this, R.layout.row_show_sign, SignByName);
             lvSign.setAdapter(customAdapter);
         } else {
             customAdapter.notifyDataSetChanged();

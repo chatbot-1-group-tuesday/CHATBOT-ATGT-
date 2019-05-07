@@ -9,9 +9,7 @@ import android.widget.Button;
 import com.linearlayout.chatbot20182.data.DBManager;
 
 
-public class MainActivity extends AppCompatActivity {
-
-
+public class MainActivitySign extends AppCompatActivity {
     private Button btnShowSign;
     private Button btnAddSign;
     private Button btnUpdate;
@@ -20,35 +18,35 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_sign);
         final DBManager dbManager = new DBManager(this);
         initWiget();
 
         btnShowSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ShowSign.class);
+                Intent intent = new Intent(MainActivitySign.this, ShowSign.class);
                 startActivity(intent);
             }
         });
         btnAddSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddSign.class);
+                Intent intent = new Intent(MainActivitySign.this, AddSign.class);
                 startActivity(intent);
             }
         });
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, UpdateSign.class);
+                Intent intent = new Intent(MainActivitySign.this, UpdateSign.class);
                 startActivity(intent);
             }
         });
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DeleteSign.class);
+                Intent intent = new Intent(MainActivitySign.this, DeleteSign.class);
                 startActivity(intent);
             }
         });

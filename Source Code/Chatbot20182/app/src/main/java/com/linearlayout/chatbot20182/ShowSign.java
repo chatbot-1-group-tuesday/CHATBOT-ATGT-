@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
-import com.linearlayout.chatbot20182.adapter.CustomAdapter;
+import com.linearlayout.chatbot20182.Adapter.CustomAdapterSign;
 import com.linearlayout.chatbot20182.data.DBManager;
 import com.linearlayout.chatbot20182.model.Sign;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public class ShowSign extends AppCompatActivity {
     private List<Sign> Sign;
     private ListView lvSign;
-    private CustomAdapter customAdapter;
+    private CustomAdapterSign customAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class ShowSign extends AppCompatActivity {
 
     private void setAdapter() {
         if (customAdapter == null) {
-            customAdapter = new CustomAdapter(this, R.layout.row_show_sign, Sign);
+            customAdapter = new CustomAdapterSign(this, R.layout.row_show_sign, Sign);
         }
         lvSign.setAdapter(customAdapter);
     }

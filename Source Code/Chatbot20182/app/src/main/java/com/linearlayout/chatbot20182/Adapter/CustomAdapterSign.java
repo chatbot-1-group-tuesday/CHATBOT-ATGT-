@@ -1,4 +1,4 @@
-package com.linearlayout.chatbot20182.adapter;
+package com.linearlayout.chatbot20182.Adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -15,15 +15,14 @@ import com.linearlayout.chatbot20182.model.Sign;
 
 import java.util.List;
 
-public class CustomAdapter extends ArrayAdapter<Sign> {
-
+public class CustomAdapterSign extends ArrayAdapter<Sign> {
 
     private Context context;
     private int resource;
     private List<Sign> ListSign;
 
 
-    public CustomAdapter(Context context, int resource, List<Sign> objects) {
+    public CustomAdapterSign(Context context, int resource, List<Sign> objects) {
         super(context, resource, objects);
         this.context = context;
         this.resource = resource;
@@ -36,6 +35,7 @@ public class CustomAdapter extends ArrayAdapter<Sign> {
         ViewHolder viewHolder; //khoi tao viewholder
         if (convertView == null) {
             viewHolder = new ViewHolder();
+
             convertView = LayoutInflater.from(context).inflate(R.layout.row_show_sign, parent, false);
             viewHolder.tv_id = convertView.findViewById(R.id.tv_id);
             viewHolder.tv_name = convertView.findViewById(R.id.tv_name);
