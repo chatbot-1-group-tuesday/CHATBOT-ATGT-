@@ -22,8 +22,7 @@
         <activity android:name=".AddLaw"></activity>
         <activity android:name=".UpdateLaw"></activity>
         <activity android:name=".DeleteLaw"></activity>
-        <activity android:name=".ShowSign">
-        </activity>
+        <activity android:name=".ShowSign"></activity>
         <activity android:name=".AddSign"></activity>
         <activity android:name=".UpdateSign"></activity>
         <activity android:name=".DeleteSign"></activity>

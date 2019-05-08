@@ -24,13 +24,13 @@ public class MainActivityChinh extends AppCompatActivity
         final DBManager dbManager = new DBManager(this);
         initWiget();
 
-       /* btnLaw.setOnClickListener(new View.OnClickListener() {
+        btnLaw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivityChinh.this, MainActivityLaw.class);
                 startActivity(intent);
             }
-        });*/
+        });
         btnSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
