@@ -39,20 +39,20 @@ public class MainActivityChinh extends AppCompatActivity
             }
         });
 
-      /*  btnChat.setOnClickListener(new View.OnClickListener() {
+       btnChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivityChinh.this, Chatchat.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
     }
     private void initWiget() {
 
         btnLaw = (Button) findViewById(R.id.btn_law);
         btnSign = (Button) findViewById(R.id.btn_sign);
-       // btnChat=  (Button) findViewById(R.id.btn_chat);
+        btnChat=  (Button) findViewById(R.id.btn_chat);
 
 
     }

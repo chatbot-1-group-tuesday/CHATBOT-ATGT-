@@ -27,7 +27,13 @@
         android:background="@color/colorxanh"
         android:text="Biển" />
 
-
+    <Button
+        android:id="@+id/btn_chat"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#FFFF99"
+        android:text="Chat" />
 
 
 

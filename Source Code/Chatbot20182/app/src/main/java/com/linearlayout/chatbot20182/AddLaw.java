@@ -35,14 +35,6 @@ public class AddLaw extends AppCompatActivity {
         setContentView(R.layout.add_law);
         final DBManager dbManager = new DBManager(this);
         initWiget();
-     /*   editImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(camera, 1111);
-            }
-        });
-*/
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
