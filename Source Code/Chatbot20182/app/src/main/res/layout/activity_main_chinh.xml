@@ -90,6 +90,17 @@
             android:textStyle="bold"
             android:text="Biển" />
 
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/btn_thongtin"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/blue_round_background"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Thông tin Ứng dụng" />
 
 
 

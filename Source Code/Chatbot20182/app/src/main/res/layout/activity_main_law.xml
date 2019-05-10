@@ -8,7 +8,7 @@
     android:outlineAmbientShadowColor="@color/design_default_color_primary"
     android:background="@drawable/nen"
 
-    tools:context=".MainActivity">
+    tools:context=".MainActivityLaw">
 
 
     <Button

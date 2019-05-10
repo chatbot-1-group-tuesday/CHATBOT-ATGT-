@@ -16,6 +16,7 @@ public class MainActivityChinh extends AppCompatActivity
     private Button btnLaw;
     private Button btnSign;
     private Button btnChat;
+    private Button btnThongtin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +48,21 @@ public class MainActivityChinh extends AppCompatActivity
             }
         });
 
+
+        btnThongtin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivityChinh.this, MainActivityThongTin.class);
+                startActivity(intent);
+            }
+        });
     }
     private void initWiget() {
 
         btnLaw = (Button) findViewById(R.id.btn_law);
         btnSign = (Button) findViewById(R.id.btn_sign);
         btnChat=  (Button) findViewById(R.id.btn_chat);
-
+        btnThongtin=(Button) findViewById(R.id.btn_thongtin);
 
     }
 

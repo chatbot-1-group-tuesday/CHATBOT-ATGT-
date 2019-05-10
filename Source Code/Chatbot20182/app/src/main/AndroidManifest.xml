@@ -30,5 +30,6 @@
         <activity android:name=".UpdateSign"></activity>
         <activity android:name=".DeleteSign"></activity>
         <activity android:name=".Chatchat"></activity>
+        <activity android:name=".MainActivityThongTin"></activity>
     </application>
 </manifest>
