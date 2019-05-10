@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.linearlayout.chatbot20182">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="CHATBOT ATGT"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivityChinh">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivityLaw"></activity>
+        <activity android:name=".MainActivitySign"></activity>
+        <activity android:name=".ShowLaw"></activity>
+        <activity android:name=".AddLaw"></activity>
+        <activity android:name=".UpdateLaw"></activity>
+        <activity android:name=".DeleteLaw"></activity>
+        <activity android:name=".ShowSign"></activity>
+        <activity android:name=".AddSign"></activity>
+        <activity android:name=".UpdateSign"></activity>
+        <activity android:name=".DeleteSign"></activity>
+        <activity android:name=".Chatchat"></activity>
+        <activity android:name=".MainActivityThongTin"></activity>
+    </application>
+</manifest>
