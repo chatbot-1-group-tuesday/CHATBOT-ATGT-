@@ -17,7 +17,7 @@
         android:src="@mipmap/img_chat"
 
         android:layout_marginTop="1dp"
-        android:scaleX="2.5"
+        android:scaleX="3.5"
         android:scaleY="1.4"
         />
 
@@ -102,6 +102,17 @@
         android:textStyle="bold"
         android:text="Thông tin Ứng dụng" />
 
+    <Button
+        android:layout_marginTop="80dp"
+        android:id="@+id/btn_dangxuat"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="90dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/purple_round_background"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Đăng Xuất" />
 
 
 
