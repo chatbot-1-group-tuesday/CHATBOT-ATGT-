@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFCCC"
+    android:orientation="vertical"
+    android:weightSum="5">
+
+    tools:context=".MainActivityChinh">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
+        android:src="@mipmap/img_chat"
+
+        android:layout_marginTop="1dp"
+        android:scaleX="3.5"
+        android:scaleY="1.4"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="20dp"
+        android:text="XIN CHÀ0!"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11sp"
+        android:textColor="#000011"
+        android:textStyle="normal"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginTop="5dp"
+        android:text="Mời bạn chọn chức năng cần sử dụng "
+
+        />
+    <View
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#FF00"
+
+        />
+
+
+        <Button
+            android:layout_marginHorizontal="20dp"
+            android:id="@+id/btn_chat"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/gray_round_background"
+            android:text="Chat"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:id="@+id/btn_law"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/red_round_background"
+            android:textColor="#008000"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text=" Luật" />
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/btn_sign"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/green_round_background"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Biển" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/btn_thongtin"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/blue_round_background"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Thông tin Ứng dụng" />
+
+    <Button
+        android:id="@+id/btn_dangxuat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="90dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/purple_round_background"
+        android:text="Đăng Xuất"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+
+
+
+
+
+</LinearLayout>
+
